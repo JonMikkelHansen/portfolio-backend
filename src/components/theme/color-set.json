@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_theme_color_sets",
+  "info": {
+    "displayName": "Color-set",
+    "icon": "brush"
+  },
+  "options": {},
+  "attributes": {
+    "Primary": {
+      "type": "string"
+    },
+    "Secondary": {
+      "type": "string"
+    },
+    "Tertiary": {
+      "type": "string"
+    },
+    "Accent": {
+      "type": "string"
+    }
+  }
+}

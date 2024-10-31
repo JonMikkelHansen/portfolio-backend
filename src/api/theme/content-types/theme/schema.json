@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "themes",
+  "info": {
+    "singularName": "theme",
+    "pluralName": "themes",
+    "displayName": "Theme"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Colors": {
+      "displayName": "Colors",
+      "type": "component",
+      "repeatable": false,
+      "component": "theme.colors"
+    },
+    "Typography": {
+      "type": "component",
+      "repeatable": false,
+      "component": "theme.typography"
+    },
+    "Spacing": {
+      "displayName": "Spacing",
+      "type": "component",
+      "repeatable": false,
+      "component": "theme.spacing"
+    },
+    "Layout": {
+      "displayName": "Layout",
+      "type": "component",
+      "repeatable": false,
+      "component": "theme.layout"
+    }
+  }
+}
