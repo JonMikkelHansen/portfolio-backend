@@ -1,5 +1,6 @@
 export default [
   'strapi::errors',
+  'strapi::cors',
   {
     name: 'strapi::security',
     config: {
@@ -14,7 +15,7 @@ export default [
       },
       cors: {
         enabled: true,
-        origin: ['*'],  // Allow all origins for now
+        origin: ['*'],
         expose: ['WWW-Authenticate', 'Server-Authorization', 'Access-Control-Allow-Origin'],
         maxAge: 31536000,
         credentials: true,
