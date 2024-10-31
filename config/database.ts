@@ -7,8 +7,8 @@ export default ({ env }) => {
     postgres: {
       connection: {
         connectionString: env('DATABASE_URL'),
-        ssl: env.bool('DATABASE_SSL', false) && {
-          rejectUnauthorized: false, // Needed for Railway's managed PostgreSQL
+        ssl: env.bool('DATABASE_SSL', true) && {
+          rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false),
         },
       },
       pool: { min: 2, max: 10 },
