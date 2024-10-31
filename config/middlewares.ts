@@ -6,7 +6,8 @@ export default [
       enabled: true,
       origin: [
         'http://localhost:3000',
-        'https://portfolio-frontend-production-bc53.up.railway.app',  // Your exact Railway frontend URL
+        'https://portfolio-frontend-production-bc53.up.railway.app',
+        'https://portfolio-production-098c.up.railway.app'
       ],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
