@@ -1,17 +1,26 @@
 export default [
   'strapi::errors',
   {
-    name: 'strapi::cors',
+    name: 'strapi::security',
     config: {
-      enabled: true,
-      origin: [
-        'http://localhost:3000',
-        'https://portfolio-frontend-production-bc53.up.railway.app',
-        'https://portfolio-production-098c.up.railway.app'
-      ],
-      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
-      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
-      credentials: true,
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': ["'self'", 'https:', 'http:'],
+          'img-src': ["'self'", 'data:', 'blob:', 'https:', 'http:'],
+          'media-src': ["'self'", 'data:', 'blob:', 'https:', 'http:'],
+          upgradeInsecureRequests: null,
+        },
+      },
+      cors: {
+        enabled: true,
+        origin: ['*'],  // Allow all origins for now
+        expose: ['WWW-Authenticate', 'Server-Authorization', 'Access-Control-Allow-Origin'],
+        maxAge: 31536000,
+        credentials: true,
+        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
+        headers: ['Content-Type', 'Authorization', 'Origin', 'Accept', 'X-Requested-With'],
+      },
     },
   },
   'strapi::poweredBy',
