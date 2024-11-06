@@ -434,6 +434,7 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::case.case'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    Short_description: Schema.Attribute.Blocks;
     Thumbnails: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
