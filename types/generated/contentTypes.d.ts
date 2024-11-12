@@ -420,6 +420,7 @@ export interface ApiCaseCase extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Date: Schema.Attribute.Date;
     Description: Schema.Attribute.Blocks;
+    External_link: Schema.Attribute.String;
     Extra_media: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
