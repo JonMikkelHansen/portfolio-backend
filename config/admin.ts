@@ -14,7 +14,9 @@ export default ({ env }) => ({
     nps: env.bool('FLAG_NPS', true),
     promoteEE: env.bool('FLAG_PROMOTE_EE', true),
   },
-  url: env('PUBLIC_URL', 'http://www.jonmikkelhansen.dk'),
+  url: process.env.NODE_ENV === 'production' 
+    ? env('PUBLIC_URL', 'http://admin.jonmikkelhansen.dk')
+    : undefined,
   autoOpen: false,
   watchIgnoreFiles: [
     '**/config/sync/**',
