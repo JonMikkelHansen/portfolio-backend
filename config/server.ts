@@ -1,7 +1,9 @@
 export default ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 8080),
-  url: env('PUBLIC_URL', 'http://www.jonmikkelhansen.dk'),
+  url: process.env.NODE_ENV === 'production' 
+    ? env('PUBLIC_URL', 'http://www.jonmikkelhansen.dk')
+    : env('PUBLIC_URL', 'http://localhost:8080'),
   app: {
     keys: env.array('APP_KEYS'),
   },
