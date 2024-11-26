@@ -1,7 +1,7 @@
 export default ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
-  port: env.int('PORT', 1337),
-  url: env('PUBLIC_URL', 'https://www.jonmikkelhansen.dk'),
+  port: env.int('PORT', 8080),
+  url: env('PUBLIC_URL', 'http://www.jonmikkelhansen.dk'),
   app: {
     keys: env.array('APP_KEYS'),
   },
@@ -11,7 +11,7 @@ export default ({ env }) => ({
         enabled: true,
         multipart: true,
         formidable: {
-          maxFileSize: 200 * 1024 * 1024, // 200mb in bytes
+          maxFileSize: 200 * 1024 * 1024,
         }
       },
     },
