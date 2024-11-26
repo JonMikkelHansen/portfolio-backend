@@ -6,7 +6,9 @@ export default ({ env }) => {
   const connections = {
     postgres: {
       connection: {
-        connectionString: env('DATABASE_URL'),
+        connectionString: process.env.NODE_ENV === 'production'
+          ? env('DATABASE_PRIVATE_URL')
+          : env('DATABASE_PUBLIC_URL'),
         ssl: env.bool('DATABASE_SSL', true) && {
           rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false),
         },
