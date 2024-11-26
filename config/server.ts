@@ -1,9 +1,13 @@
 export default ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 8080),
-  url: process.env.NODE_ENV === 'production' 
-    ? env('PUBLIC_URL', 'http://www.jonmikkelhansen.dk')
-    : env('PUBLIC_URL', 'http://localhost:8080'),
+  url: env('PUBLIC_URL', 'http://www.jonmikkelhansen.dk'),
+  admin: {
+    auth: {
+      secret: env('ADMIN_JWT_SECRET'),
+    },
+    url: '/admin',
+  },
   app: {
     keys: env.array('APP_KEYS'),
   },
