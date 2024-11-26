@@ -1,12 +1,12 @@
 export default ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 8080),
-  url: env('PUBLIC_URL', 'http://www.jonmikkelhansen.dk'),
+  url: env('PUBLIC_URL', 'http://admin.jonmikkelhansen.dk'),
   admin: {
     auth: {
       secret: env('ADMIN_JWT_SECRET'),
     },
-    url: '/admin',
+    path: '/admin',
   },
   app: {
     keys: env.array('APP_KEYS'),
